@@ -1,15 +1,24 @@
-# This is a sample Python script.
+# Домашнее задание по уроку "Пространство имен"
+#
+# Создайте новый проект в PyCharm
+# Запустите созданный проект
+# Ваша задача:
+# Создайте новую функцию def test_function
+# Создайте другую функцию внутри функции inner_function, функция должна печатать значение
+# "Я в области видимости функции test_function"
+# Вызовите функцию inner_function внутри функции test_function
+# Попробуйте вызывать inner_function вне функции test_function
+# и посмотрите на результат выполнения программы
+# Полученный код напишите в ответ к домашнему заданию
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+def test_function():
+    def inner_function():
+        print("Я в области видимости функции test_function")
+        inner_function()
+        return
+    return
 
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+try:
+    inner_function()
+except:
+    print("Не вызвать функцию из функции. Ошибочка, Аднака!")
