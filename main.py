@@ -14,11 +14,17 @@
 def test_function():
     def inner_function():
         print("Я в области видимости функции test_function")
-        inner_function()
         return
+    inner_function()
     return
 
 try:
     inner_function()
 except:
     print("Не вызвать функцию из функции. Ошибочка, Аднака!")
+
+try:
+    test_function()
+    print("Сработало, да неужели?")
+except:
+    print("Не сработало")
